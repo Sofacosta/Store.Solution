@@ -1,0 +1,19 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Store.Models.Invoice
+
+<h4>Add a new task</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Description)
+  @Html.TextBoxFor(model => model.Description)
+
+  @* @Html.LabelFor(model => model.Product)
+  @Html.DropDownList("CategoryId") *@
+
+  <input type="submit" value="Add new invoice" class="btn btn-default" />
+}
+<p>@Html.ActionLink("Show all invoices", "Index")</p>

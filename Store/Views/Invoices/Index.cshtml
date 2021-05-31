@@ -1,0 +1,20 @@
+@{
+  Layout = "_Layout";
+}
+
+@using Store.Models;
+@model List<Store.Models.Invoice>;
+
+<h1>Invoices</h1>
+
+@if (@Model.Count == 0)
+{
+  <h3>No items have been added yet!</h3>
+} 
+
+@foreach (Invoice invoice in Model)
+{
+  <li>@Html.ActionLink($"{invoice.Description}", "Details", new { id = invoice.InvoiceId }) | @invoice.Product.Name</li>
+}
+
+<p>@Html.ActionLink("Add new invoice", "Create")</p>

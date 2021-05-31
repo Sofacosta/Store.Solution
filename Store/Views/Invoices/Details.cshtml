@@ -1,0 +1,12 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Store.Models.Invoice
+
+<h2>Invoice Details</h2>
+<hr />
+<h3>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)<h3>
+<p>@Html.ActionLink("Edit Invoice", "Edit", new { id = Model.InvoiceId })</p>
+<p>@Html.ActionLink("Delete Invoice", "Delete", new { id = Model.InvoiceId })</p>
+<p>@Html.ActionLink("Back to list", "Index")</p>
