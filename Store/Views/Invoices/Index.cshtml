@@ -1,4 +1,4 @@
-@{
+ @{
   Layout = "_Layout";
 }
 
@@ -14,7 +14,7 @@
 
 @foreach (Invoice invoice in Model)
 {
-  <li>@Html.ActionLink($"{invoice.Description}", "Details", new { id = invoice.InvoiceId }) | @invoice.Product.Name</li>
+  <li>@Html.ActionLink($"{invoice.Description}", "Details", new { id = invoice.InvoiceId })</li>
 }
 
 <p>@Html.ActionLink("Add new invoice", "Create")</p>

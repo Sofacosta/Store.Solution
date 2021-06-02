@@ -6,11 +6,11 @@ namespace Store.Models
   {
     public Product()
     {
-      this.Invoices = new HashSet<Invoice>();
+      this.JoinEntities = new HashSet<ProductInvoice>();
     }
 
     public int ProductId { get; set; }
     public string Name { get; set; }
-    public virtual ICollection<Invoice> Invoices { get; set; }
+    public virtual ICollection<ProductInvoice> JoinEntities { get; set; }
   }
 }

@@ -6,6 +6,7 @@ namespace Store.Models
   {
     public virtual DbSet<Product> Products { get; set; }
     public DbSet<Invoice> Invoices { get; set; }
+    public DbSet<ProductInvoice> ProductInvoice { get;set;}
 
     public StoreContext(DbContextOptions options) : base(options) { }
 

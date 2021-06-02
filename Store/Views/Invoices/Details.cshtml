@@ -6,7 +6,23 @@
 
 <h2>Invoice Details</h2>
 <hr />
-<h3>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)<h3>
+<h3>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)</h3>
+
+@if(@Model.JoinEntities.Count == 0)
+{
+  <p>This Invoice does not belong to any categories</p>
+}
+else
+{
+  <h4>Products the Invoice belongs to:</h4>
+  <ul>
+  @foreach(var join in Model.JoinEntities)
+  {
+    <li>@join.Product.Name</li>
+  }
+  </ul>
+}
+
+<p>@Html.ActionLink("Back to list", "Index")</p>
 <p>@Html.ActionLink("Edit Invoice", "Edit", new { id = Model.InvoiceId })</p>
 <p>@Html.ActionLink("Delete Invoice", "Delete", new { id = Model.InvoiceId })</p>
-<p>@Html.ActionLink("Back to list", "Index")</p>
