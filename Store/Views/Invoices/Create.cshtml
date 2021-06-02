@@ -11,8 +11,8 @@
   @Html.LabelFor(model => model.Description)
   @Html.TextBoxFor(model => model.Description)
 
-  @* @Html.LabelFor(model => model.Product)
-  @Html.DropDownList("CategoryId") *@
+  @Html.Label("Select product")
+  @Html.DropDownList("ProductId")
 
   <input type="submit" value="Add new invoice" class="btn btn-default" />
 }

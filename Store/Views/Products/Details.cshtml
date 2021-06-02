@@ -1,12 +1,28 @@
-@* @{
+@{
   Layout = "_Layout";
 }
 
-@model Store.Models.Product
+@model Store.Models.Product;
 
 <h2>Product Details</h2>
 <hr />
-<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)<h3>
+<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+
+@if(@Model.JoinEntities.Count == 0)
+{
+  <p>This category does not contain any invoices</p>
+}
+else
+{
+  <h4>Invoices the products contains:</h4>
+  <ul>
+  @foreach(var join in Model.JoinEntities)
+  {
+    <li>@join.Invoice.Description</li>
+  }
+  </ul>
+}
+
+<p>@Html.ActionLink("Back to products", "Index")</p>
 <p>@Html.ActionLink("Edit Product", "Edit", new { id = Model.ProductId })</p>
 <p>@Html.ActionLink("Delete Product", "Delete", new { id = Model.ProductId })</p>
-<p>@Html.ActionLink("Back to list", "Index")</p> *@
