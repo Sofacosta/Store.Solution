@@ -75,20 +75,28 @@ namespace Store.Controllers
     return View(thisItem);
 }
 
+    public ActionResult Delete(int id)
+    {
+      var thisInvoice = _db.Invoices.FirstOrDefault(invoice => invoice.InvoiceId == id);
+      return View(thisInvoice);
+    }
 
-//     public ActionResult Delete(int id)
-//     {
-//       var thisInvoice = _db.Invoices.FirstOrDefault(invoice => invoice.InvoiceId == id);
-//       return View(thisInvoice);
-//     }
+    [HttpPost, ActionName("Delete")]
+    public ActionResult DeleteConfirmed(int id)
+    {
+      var thisInvoice = _db.Invoices.FirstOrDefault(invoice => invoice.InvoiceId == id);
+      _db.Invoices.Remove(thisInvoice);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
 
-//     [HttpPost, ActionName("Delete")]
-//     public ActionResult DeleteConfirmed(int id)
-//     {
-//       var thisInvoice = _db.Invoices.FirstOrDefault(invoice => invoice.InvoiceId == id);
-//       _db.Invoices.Remove(thisInvoice);
-//       _db.SaveChanges();
-//       return RedirectToAction("Index");
-//     }
+    [HttpPost]
+  public ActionResult DeleteCategory(int joinId)
+  {
+    var joinEntry = _db.ProductInvoice.FirstOrDefault(entry => entry.ProductInvoiceId == joinId);
+    _db.ProductInvoice.Remove(joinEntry);
+    _db.SaveChanges();
+    return RedirectToAction("Index");
+  }
   }
 }

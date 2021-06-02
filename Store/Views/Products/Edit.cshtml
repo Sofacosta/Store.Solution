@@ -1,4 +1,4 @@
-@* @{
+@{
   Layout = "_Layout";
 }
 
@@ -6,7 +6,7 @@
 
 <h2>Edit</h2>
 
-<h4>Edit this category: @Html.DisplayFor(model => model.Name)</h4>
+<h4>Edit this product: @Html.DisplayFor(model => model.Name)</h4>
 
 @using (Html.BeginForm())
 {
@@ -17,4 +17,4 @@
 
   <input type="submit" value="Save" />
 }
-<p>@Html.ActionLink("Back to list", "Index")</p> *@
+<p>@Html.ActionLink("Back to list", "Index")</p>
