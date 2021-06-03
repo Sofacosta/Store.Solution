@@ -5,7 +5,7 @@
 </div>
 
 <h3 align="center">Invoice for store products, 05-27-2021</h3>
-<h4 align="center"> By Sofia Acosta</h4>
+<h4 align="center"> By Sofia Acosta and Garret Brown </h4>
 
 ## Description
 

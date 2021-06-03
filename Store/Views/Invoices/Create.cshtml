@@ -4,16 +4,22 @@
 
 @model Store.Models.Invoice
 
-<h4>Add a new task</h4>
+<h4>Add a brief description of the invoice</h4>
 
 @using (Html.BeginForm())
 {
   @Html.LabelFor(model => model.Description)
   @Html.TextBoxFor(model => model.Description)
 
+  if (Model.Description.IsNullOrWhiteSpace(TextBox.Text))
+  {
+    MessageBox.Show("The texbox is empty!");
+    
+  }
   @Html.Label("Select product")
   @Html.DropDownList("ProductId")
 
   <input type="submit" value="Add new invoice" class="btn btn-default" />
 }
 <p>@Html.ActionLink("Show all invoices", "Index")</p>
+

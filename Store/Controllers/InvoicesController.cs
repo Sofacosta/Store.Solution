@@ -70,9 +70,9 @@ namespace Store.Controllers
     }
     public ActionResult AddCategory(int id)
 {
-    var thisItem = _db.Invoices.FirstOrDefault(item => item.InvoiceId == id);
+    var thisInvoice = _db.Invoices.FirstOrDefault(invoice => invoice.InvoiceId == id);
     ViewBag.CategoryId = new SelectList(_db.Products, "ProductId", "Name");
-    return View(thisItem);
+    return View(thisInvoice);
 }
 
     public ActionResult Delete(int id)
